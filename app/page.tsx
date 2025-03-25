@@ -29,6 +29,9 @@ export default function Home() {
       webApp.ready(); // 通知 Telegram 应用已准备好
       webApp.expand(); // 展开到全屏
       setUser(webApp.initDataUnsafe?.user); // 获取用户信息
+
+      // 默认进入全屏模式
+      // webApp.requestFullscreen();
     }
   }, [isScriptLoaded]);
 
@@ -44,12 +47,17 @@ export default function Home() {
     window.Telegram.WebApp.openTelegramLink("https://t.me/trc404/app");
   }
 
+  function requestFullScreen() {
+    window.Telegram.WebApp.requestFullscreen();
+  }
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <a href="/">Back</a>
       <a href="https://www.google.com/">Google</a>
       <a onClick={onClickA}>openTgLink Google</a>
       <a onClick={onClickTonMasterBot}>openTgLink TON Master Bot</a>
+      <a onClick={requestFullScreen}>Request Full Screen</a>
 
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start bg-amber-950">
         <div style={{ padding: "20px" }}>

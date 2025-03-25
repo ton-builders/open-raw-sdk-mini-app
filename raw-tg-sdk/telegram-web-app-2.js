@@ -231,7 +231,7 @@
   //  触觉反馈(震动)
   var HapticFeedback = (function () {})();
 
-  //  云存储
+  //  云存储，每个 bot 可以在云存储中为每个用户存储最多 1024 个 items。
   var CloudStorage = (function () {})();
 
   //  生物识别相关功能
@@ -269,7 +269,7 @@
   var WebAppWriteAccessRequested = false;
   function onWriteAccessRequested(eventType, eventData) {}
 
-  // 获取“请求的联系人信息”
+  // 获取“请求的联系信息”(如电话号码)
   function getRequestedContact(callback, timeout) {}
 
   // 处理“文件下载请求”的回调逻辑
