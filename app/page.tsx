@@ -35,16 +35,16 @@ export default function Home() {
     }
   }, [isScriptLoaded]);
 
-  function onClickA() {
+  function openTgLink() {
     // alert(window.Telegram.WebApp.openTgLink);
-    alert(window.Telegram.WebApp);
-    alert(window.Telegram.WebApp.openTelegramLink);
+    console.info(window.Telegram.WebApp);
+    console.info(window.Telegram.WebApp.openTelegramLink);
     // [Telegram.WebApp] Url host is not supported "https://www.google.com/"
     window.Telegram.WebApp.openTelegramLink("https://www.google.com/");
   }
 
   function onClickTonMasterBot() {
-    window.Telegram.WebApp.openTelegramLink("https://t.me/trc404/app");
+    window.Telegram.WebApp.openTelegramLink("https://t.me/buzzit1_bot/buzzit?startapp=5499157826");
   }
 
   function requestFullScreen() {
@@ -52,19 +52,21 @@ export default function Home() {
   }
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <a href="/">Back</a>
-      <a href="https://www.google.com/">Google</a>
-      <a onClick={onClickA}>openTgLink Google</a>
-      <a onClick={onClickTonMasterBot}>openTgLink TON Master Bot</a>
-      <a onClick={requestFullScreen}>Request Full Screen</a>
+    <div className="grid grid-rows-[20px_1fr_20px] items-start justify-items-start min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start bg-amber-950">
-        <div style={{ padding: "20px" }}>
+      <a href="/" className={"bg-gray-500 gap-2 p-2 rounded-2xl"}>Back</a>
+      <a href="https://www.google.com/" className={"bg-blue-800 gap-2 p-2 rounded-2xl"}> a tag open Google</a>
+      <a onClick={openTgLink} className={"bg-blue-800 gap-2 p-2 rounded-2xl"}>openTgLink Google (fail with error)</a>
+      <a onClick={onClickTonMasterBot} className={"bg-blue-800 gap-2 p-2 rounded-2xl"}>openTgLink open Mini App</a>
+      <a onClick={requestFullScreen} className={"bg-red-800 gap-2 p-2 rounded-2xl"}>Request Full Screen</a>
+
+      <main className="flex gap-[32px] row-start-2 items-center sm:items-start ">
+
+        <div  className="w-full overflow-hidden bg-amber-950" >
           <h1>Telegram Web App Demo</h1>
           {isScriptLoaded ? (
             user ? (
-              <div>
+              <div className="overflow-hidden">
                 <p>
                   Welcome, {user.first_name} {user.last_name}!
                 </p>
@@ -79,11 +81,12 @@ export default function Home() {
           )}
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a href="/">Back</a>
-        <a href="https://www.google.com/">Google</a>
-        <a onClick={onClickA}>openTgLink Google</a>
-      </footer>
+
+
+      {/*<footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">*/}
+      {/*  <a href="https://www.google.com/">Google</a>*/}
+      {/*  <a onClick={openTgLink}>openTgLink Google</a>*/}
+      {/*</footer>*/}
     </div>
   );
 }
