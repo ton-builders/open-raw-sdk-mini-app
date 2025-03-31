@@ -82,11 +82,6 @@ export default function Home() {
         </div>
       </main>
 
-
-      {/*<footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">*/}
-      {/*  <a href="https://www.google.com/">Google</a>*/}
-      {/*  <a onClick={openTgLink}>openTgLink Google</a>*/}
-      {/*</footer>*/}
     </div>
   );
 }
