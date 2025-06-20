@@ -31,7 +31,7 @@ export default function Home() {
       setUser(webApp.initDataUnsafe?.user); // 获取用户信息
 
       // 默认进入全屏模式
-      // webApp.requestFullscreen();
+      webApp.requestFullscreen();
     }
   }, [isScriptLoaded]);
 
@@ -40,7 +40,7 @@ export default function Home() {
     console.info(window.Telegram.WebApp);
     console.info(window.Telegram.WebApp.openTelegramLink);
     // [Telegram.WebApp] Url host is not supported "https://www.google.com/"
-    window.Telegram.WebApp.openTelegramLink("https://www.google.com/");
+    window.Telegram.WebApp.openLink("https://www.google.com/");
   }
 
   function onClickTonMasterBot() {
@@ -55,8 +55,13 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-start justify-items-start min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 
       <a href="/" className={"bg-gray-500 gap-2 p-2 rounded-2xl"}>Back</a>
+
       <a href="https://www.google.com/" className={"bg-blue-800 gap-2 p-2 rounded-2xl"}> a tag open Google</a>
+
+
       <a onClick={openTgLink} className={"bg-blue-800 gap-2 p-2 rounded-2xl"}>openTgLink Google (fail with error)</a>
+
+
       <a onClick={onClickTonMasterBot} className={"bg-blue-800 gap-2 p-2 rounded-2xl"}>openTgLink open Mini App</a>
       <a onClick={requestFullScreen} className={"bg-red-800 gap-2 p-2 rounded-2xl"}>Request Full Screen</a>
 
